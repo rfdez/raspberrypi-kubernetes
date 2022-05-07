@@ -443,7 +443,7 @@ traefik:
     #  existingClaim: ""
     accessMode: ReadWriteOnce
     size: 128Mi
-    # storageClass: ""
+    storageClass: local-path
     path: /data
     annotations: {}
     # subPath: "" # only mount a subpath of the Volume into the pod
