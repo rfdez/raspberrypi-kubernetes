@@ -5,7 +5,7 @@ resources:
   - ../../base
 
   # Apps enabled for this cluster
-  - ../../apps/metallb/overlays/rpi-1
+  - ../../../apps/metallb/overlays/rpi-1
 
   # Monitoring
   - ../../../apps/prometheus/overlays/rpi-1
