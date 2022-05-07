@@ -4,5 +4,3 @@ kind: Kustomization
 resources:
   - app.yaml
   - namespace.yaml
-  - storageclass.yaml
-  - pv.yaml
