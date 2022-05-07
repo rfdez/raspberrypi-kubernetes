@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik
+  namespace: argocd
+spec:
+  source:
+    path: apps/traefik
+    repoURL: https://github.com/rfdez/raspberrypi-kubernetes
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: traefik-v2
+  project: default
+  ignoreDifferences:
+    - kind: Serviceaccount
+      jsonPointers:
+      - /imagePullSecrets

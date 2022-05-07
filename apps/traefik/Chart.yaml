@@ -1,0 +1,11 @@
+apiVersion: v2
+name: traefik
+description: A Helm Chart for Traefik
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+
+dependencies:
+- name: traefik
+  version: 10.19.5
+  repository: https://helm.traefik.io/traefik

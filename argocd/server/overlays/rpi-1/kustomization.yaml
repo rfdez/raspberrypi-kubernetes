@@ -6,6 +6,7 @@ resources:
 
   # Apps enabled for this cluster
   - ../../../apps/metallb/overlays/rpi-1
+  - ../../../apps/traefik/overlays/rpi-1
 
   # Monitoring
   - ../../../apps/prometheus/overlays/rpi-1
