@@ -260,8 +260,6 @@ traefik:
   additionalArguments:
   #  - "--providers.kubernetesingress.ingressclass=traefik-internal"
   #  - "--log.level=DEBUG"
-    - "--api-insecure"
-    - "--accesslog"
     - "--entrypoints.web.Address=:80"
     - "--entrypoints.websecure.Address=:443"
     - "--providers.kubernetescrd"
