@@ -6,6 +6,11 @@ traefik:
     enabled: true
     path: /certs
     size: 128Mi
+    name: data
+    accessMode: ReadWriteOnce
+  volumes:
+  - name: data
+    mountPath: "/certs"
   additionalArguments:
     - --api-insecure
     - --accesslog
