@@ -167,20 +167,21 @@ traefik:
   # - "--providers.file.filename=/config/dynamic.toml"
   # - "--ping"
   # - "--ping.entrypoint=web"
-  volumes: []
+  volumes:
   # - name: public-cert
   #   mountPath: "/certs"
   #   type: secret
   # - name: '{{ printf "%s-configs" .Release.Name }}'
   #   mountPath: "/config"
   #   type: configMap
+  - name: certs
+    mountPath: /data
 
   # Additional volumeMounts to add to the Traefik container
   additionalVolumeMounts:
-    []
     # For instance when using a logshipper for access logs
-    # - name: traefik-logs
-    #   mountPath: /var/log/traefik
+    - name: certs
+      mountPath: /data
 
   # Logs
   # https://docs.traefik.io/observability/logs/
@@ -453,7 +454,7 @@ traefik:
     #  existingClaim: ""
     accessMode: ReadWriteOnce
     size: 128Mi
-    storageClass: local
+    storageClass: ""
     path: /data
     annotations: {}
     # subPath: "" # only mount a subpath of the Volume into the pod
