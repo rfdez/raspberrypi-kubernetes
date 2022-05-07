@@ -167,19 +167,16 @@ traefik:
   # - "--providers.file.filename=/config/dynamic.toml"
   # - "--ping"
   # - "--ping.entrypoint=web"
-  volumes:
+  volumes: []
   # - name: public-cert
   #   mountPath: "/certs"
   #   type: secret
   # - name: '{{ printf "%s-configs" .Release.Name }}'
   #   mountPath: "/config"
   #   type: configMap
-  - name: certs
-    mountPath: /data
 
   # Additional volumeMounts to add to the Traefik container
-  additionalVolumeMounts:
-    []
+  additionalVolumeMounts: []
     # For instance when using a logshipper for access logs
     # - name: traefik-logs
     #   mountPath: /var/log/traefik
