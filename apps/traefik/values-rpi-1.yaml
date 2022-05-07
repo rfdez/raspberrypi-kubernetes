@@ -260,8 +260,8 @@ traefik:
   additionalArguments:
   #  - "--providers.kubernetesingress.ingressclass=traefik-internal"
   #  - "--log.level=DEBUG"
-    - "--entrypoints.web.Address=:80"
-    - "--entrypoints.websecure.Address=:443"
+    - "--entrypoints.web.Address=:8000"
+    - "--entrypoints.websecure.Address=:8443"
     - "--providers.kubernetescrd"
     - "--certificatesresolvers.le.acme.tlschallenge"
     - "--certificatesresolvers.le.acme.httpchallenge"
@@ -269,7 +269,6 @@ traefik:
     - "--certificatesresolvers.le.acme.storage=/data/acme.json"
     - "--certificatesresolvers.le.acme.httpchallenge.entrypoint=web"
     - "--certificatesresolvers.le.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
-    - "--entrypoints.websecure.address=:443"
 
   # Environment variables to be passed to Traefik's binary
   env: []
