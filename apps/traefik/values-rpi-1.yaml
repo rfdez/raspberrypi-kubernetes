@@ -452,7 +452,7 @@ traefik:
     #  existingClaim: ""
     accessMode: ReadWriteOnce
     size: 128Mi
-    storageClass: ""
+    storageClass: "nfs"
     path: /data
     annotations: {}
     # subPath: "" # only mount a subpath of the Volume into the pod
