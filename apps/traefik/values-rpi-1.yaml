@@ -260,8 +260,8 @@ traefik:
   additionalArguments:
   #  - "--providers.kubernetesingress.ingressclass=traefik-internal"
   #  - "--log.level=DEBUG"
-    - "--entrypoints.web.Address=:80"
-    - "--entrypoints.websecure.Address=:443"
+    - "--entrypoints.web.Address=:8000"
+    - "--entrypoints.websecure.Address=:8443"
     - "--providers.kubernetescrd"
     - "--certificatesresolvers.le.acme.tlschallenge"
     - "--certificatesresolvers.le.acme.email=info@raulfernandez.dev"
