@@ -5,8 +5,8 @@ n8n:
     encryption_key: # n8n creates a random encryption key automatically on the first launch and saves it in the ~/.n8n folder. That key is used to encrypt the credentials before they get saved to the database.
   defaults:
 
-  config: # Dict with all n8n json config options
-  secret: # Dict with all n8n json config options, unlike config the values here will end up in a secret.
+  config: {} # Dict with all n8n json config options
+  secret: {} # Dict with all n8n json config options, unlike config the values here will end up in a secret.
 
   # Typical Example of a config in combination with a secret.
   # config:
