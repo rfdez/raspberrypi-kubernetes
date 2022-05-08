@@ -190,7 +190,7 @@ traefik:
       # also ask for the json format in the format option
       # format: json
       # By default, the level is set to ERROR. Alternative logging levels are DEBUG, PANIC, FATAL, ERROR, WARN, and INFO.
-      level: ERROR
+      level: DEBUG
     access:
       # To enable access logs
       enabled: true
@@ -398,8 +398,7 @@ traefik:
     # Additional entries here will be added to the service spec.
     # Cannot contain type, selector or ports entries.
     spec:
-      {}
-      # externalTrafficPolicy: Cluster
+      externalTrafficPolicy: Local
       # loadBalancerIP: "1.2.3.4"
       # clusterIP: "2.3.4.5"
     loadBalancerSourceRanges:
