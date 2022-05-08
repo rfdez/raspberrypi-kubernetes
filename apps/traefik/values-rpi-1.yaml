@@ -193,7 +193,7 @@ traefik:
       level: ERROR
     access:
       # To enable access logs
-      enabled: false
+      enabled: true
       # By default, logs are written using the Common Log Format (CLF).
       # To write logs in JSON, use json in the format option.
       # If the given format is unsupported, the default (CLF) is used instead.
@@ -260,13 +260,10 @@ traefik:
   additionalArguments:
   #  - "--providers.kubernetesingress.ingressclass=traefik-internal"
   #  - "--log.level=DEBUG"
-    - "--entrypoints.web.Address=:8000"
-    - "--entrypoints.websecure.Address=:8443"
-    - "--entrypoints.web.http.redirections.entryPoint.to=:443"
-    - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+    - "--entrypoints.web.Address=:80"
+    - "--entrypoints.websecure.Address=:443"
     - "--providers.kubernetescrd"
     - "--certificatesresolvers.le.acme.tlschallenge"
-    - "--certificatesresolvers.le.acme.httpchallenge"
     - "--certificatesresolvers.le.acme.email=info@raulfernandez.dev"
     - "--certificatesresolvers.le.acme.storage=/data/acme.json"
     - "--certificatesresolvers.le.acme.httpchallenge.entrypoint=web"
@@ -336,7 +333,7 @@ traefik:
       # Port Redirections
       # Added in 2.2, you can make permanent redirects via entrypoints.
       # https://docs.traefik.io/routing/entrypoints/#redirection
-      redirectTo: websecure
+      # redirectTo: websecure
     websecure:
       port: 8443
       # hostPort: 8443
@@ -352,14 +349,11 @@ traefik:
       # Set TLS at the entrypoint
       # https://doc.traefik.io/traefik/routing/entrypoints/#tls
       tls:
-        enabled: true
+        enabled: false
         # this is the name of a TLSOption definition
         options: ""
         certResolver: le
-        domains:
-        - main: home.raulfernandez.dev
-          sans:
-            - '*.home.raulfernandez.dev'
+        domains: []
     metrics:
       port: 9100
       # hostPort: 9100
