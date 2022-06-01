@@ -3,9 +3,8 @@ name: prometheus
 description: A Helm Chart for Prometheus
 type: application
 version: 0.1.0
-appVersion: "0.1.0"
 
 dependencies:
-- name: kube-prometheus-stack
-  version: 35.0.3
+- name: prometheus
+  version: 15.9.0
   repository: https://prometheus-community.github.io/helm-charts
