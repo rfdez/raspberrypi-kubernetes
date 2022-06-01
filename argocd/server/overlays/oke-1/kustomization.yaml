@@ -6,3 +6,4 @@ resources:
 
   # Monitoring
   - ../../../apps/prometheus/overlays/oke-1
+  - ../../../apps/grafana/overlays/oke-1
