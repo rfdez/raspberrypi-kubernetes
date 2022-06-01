@@ -4,6 +4,9 @@ kind: Kustomization
 resources:
   - ../../base
 
+    # Apps enabled for this cluster
+  - ../../../apps/n8n/overlays/oke-1
+
   # Monitoring
   - ../../../apps/prometheus/overlays/oke-1
   - ../../../apps/grafana/overlays/oke-1
